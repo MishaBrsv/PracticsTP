@@ -54,7 +54,20 @@ public class TaskOne {
         return result.toString();
     }
 
-    //public static Integer nextEdge(int a, int b) {
-        
-    //}
+    public static Integer nextEdge(int a, int b) {
+        return (int)Math.sqrt(a*a+b*b-2*a*b*Math.cos(179));
+    }
+
+    public static Double sumOfCubes(int[] nums) {
+        return Math.pow(nums[0],3) + Math.pow(nums[1],3) + Math.pow(nums[2],3);
+    }
+
+    public static Boolean abcmath(int a, int b, int c) {
+        boolean result = false;
+        for(int i = 1; i <= b; i++) {
+            a += a;
+        }
+        if(a%c == 0) result = true;
+        return result;
+    }
 }
