@@ -1,9 +1,8 @@
 package core;
 
 import tasks.TaskOne;
+import tasks.TaskThree;
 import tasks.TaskTwo;
-
-import java.util.ArrayList;
 
 public class Main {
 
@@ -35,5 +34,10 @@ public class Main {
         System.out.println("2.9(prefix): " + TaskTwo.isPrefix("automation", "auto"));
         System.out.println("2.9(suffix): " + TaskTwo.isSuffix("arochofobia", "fobia"));
         System.out.println("2.10: " + TaskTwo.boxSeq(1));
+        System.out.println("3.1: " + TaskThree.solutions(1,0,-1));
+        System.out.println("3.2: " + TaskThree.findZip("all zip files are zipped"));
+        System.out.println("3.3: " + TaskThree.checkPerfect(28));
+        System.out.println("3.4: " + TaskThree.flipEndChars("Cat, dog, and mouse."));
+        System.out.println("3.5: " + TaskThree.isValidHexCode("#eaecee"));
     }
 }
