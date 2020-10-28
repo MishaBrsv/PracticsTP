@@ -3,6 +3,8 @@ package core;
 import tasks.TaskOne;
 import tasks.TaskTwo;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
@@ -24,5 +26,14 @@ public class Main {
         System.out.println("2.2: " + TaskTwo.differenceMaxMin(mas));
         int[] mas1 = {1,5,6};
         System.out.println("2.3: " + TaskTwo.isAvgWhole(mas1));
+        int[] mas2 = {1,2,3,5};
+        System.out.println("2.4: " + TaskTwo.cumulativeSum(mas2));
+        System.out.println("2.5: " + TaskTwo.getDecimalPlaces("43.20"));
+        System.out.println("2.6: " + TaskTwo.fibonacci(7));
+        System.out.println("2.7: " + TaskTwo.isValid("59001"));
+        System.out.println("2.8: " + TaskTwo.isStrangePair("sparkling", "groups"));
+        System.out.println("2.9(prefix): " + TaskTwo.isPrefix("automation", "auto"));
+        System.out.println("2.9(suffix): " + TaskTwo.isSuffix("arochofobia", "fobia"));
+        System.out.println("2.10: " + TaskTwo.boxSeq(1));
     }
 }
