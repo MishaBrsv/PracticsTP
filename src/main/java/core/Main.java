@@ -39,5 +39,12 @@ public class Main {
         System.out.println("3.3: " + TaskThree.checkPerfect(28));
         System.out.println("3.4: " + TaskThree.flipEndChars("Cat, dog, and mouse."));
         System.out.println("3.5: " + TaskThree.isValidHexCode("#eaecee"));
+        int[] same1 = {2};
+        int[] same2 = {3,3,3,3,3,};
+        System.out.println("3.6: " + TaskThree.same(same1, same2));
+        System.out.println("3.7: " + TaskThree.isKaprekar(297));
+        System.out.println("3.8: " + TaskThree.longestZero("01100001011000"));
+        System.out.println("3.9: " + TaskThree.nextPrime(24));
+        System.out.println("3.10: " + TaskThree.rightTriangle(145,105,100));
     }
 }
