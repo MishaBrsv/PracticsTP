@@ -4,7 +4,7 @@ import tasks.TaskOne;
 import tasks.TaskThree;
 import tasks.TaskTwo;
 
-public class Main {
+public class FirstTwoThreeBlockMain {
 
     public static void main(String[] args) {
         System.out.println("1.1: " + TaskOne.remainder(3,4));
