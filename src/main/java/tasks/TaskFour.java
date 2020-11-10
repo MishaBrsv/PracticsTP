@@ -1,6 +1,7 @@
 package tasks;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.Iterator;
 
 public class TaskFour {
@@ -137,5 +138,199 @@ public class TaskFour {
         }
 
         return "$" + String.format("%.2f", reg*rate + over*rate*mult);
+    }
+
+    public static String BMI(double w, double h)
+    {
+        double val = w / (h*h);
+        String res = String.format("%.1f", val);
+        if (val < 18.5)
+        {
+            res += " Underweight";
+        }
+        else if (val >= 18.5 && val < 25)
+        {
+            res += " Normal weight";
+        }
+        else
+        {
+            res += " Overweight";
+        }
+
+        return res;
+    }
+
+    public static int bugger(int n)
+    {
+        int count = 0;
+        String str = Integer.toString(n);
+
+        while (str.length() > 1)
+        {
+            count++;
+
+            int val = 1;
+            for (int i = 0; i < str.length(); i++)
+            {
+                val *= Integer.parseInt((str.substring(i, i+1)));
+            }
+
+            str = Integer.toString(val);
+        }
+
+        return count;
+    }
+
+    public static String toStarShorthand(String str)
+    {
+        String res = "";
+        int count = 1;
+        char ch = '\0';
+
+        for (int i = 0; i < str.length(); i++)
+        {
+            char newCh = str.charAt(i);
+
+            if (newCh == ch)
+            {
+                count++;
+            }
+            else
+            {
+                if (count != 1)
+                {
+                    res += '*';
+                    res += Integer.toString(count);
+                    count = 1;
+                }
+                res += newCh;
+                ch = newCh;
+            }
+        }
+        if (count != 1)
+        {
+            res += '*';
+            res += Integer.toString(count);
+        }
+
+        return res;
+    }
+
+    public static boolean doesRhyme(String str1, String str2)
+    {
+        int index;
+
+        index = str1.lastIndexOf(' ');
+        if (index == -1)
+        {
+            index = 0;
+        }
+        String word1 = str1.substring(index+1).toUpperCase();
+
+        index = str2.lastIndexOf(' ');
+        if (index == -1)
+        {
+            index = 0;
+        }
+        String word2 = str2.substring(index+1).toUpperCase();
+
+        String check = "";
+        for (int i = 0; i < word1.length(); i++)
+        {
+            char ch = word1.charAt(i);
+            if (ch == 'E' || ch == 'Y' || ch == 'U' || ch == 'O' || ch == 'A' || ch == 'I')
+            {
+                check += ch;
+            }
+        }
+
+        int count = 0;
+        for (int i = 0; i < word2.length(); i++)
+        {
+            char ch = word2.charAt(i);
+            if (ch == 'E' || ch == 'Y' || ch == 'U' || ch == 'O' || ch == 'A' || ch == 'I')
+            {
+                if (count >= check.length())
+                {
+                    return false;
+                }
+                else if (ch != check.charAt(count))
+                {
+                    return false;
+                }
+                count++;
+            }
+        }
+
+        return true;
+    }
+
+    public static boolean trouble(int a, int b)
+    {
+        String str1 = Integer.toString(a);
+        String str2 = Integer.toString(b);
+        char number = '\0';
+        int count = 0;
+
+        for (int i = 0; i < str1.length(); i++)
+        {
+            char ch = str1.charAt(i);
+            if (ch == number)
+            {
+                count++;
+            }
+            else
+            {
+                number = ch;
+                count = 0;
+            }
+            if (count == 2)
+            {
+                if (str2.contains(String.copyValueOf(new char[]{number, number})))
+                {
+                    return true;
+                }
+                else
+                {
+                    count = 0;
+                }
+            }
+        }
+
+        return false;
+    }
+
+    public static int countUniqueBooks(String str, String endChar)
+    {
+        int count = 0;
+        boolean open = false;
+        HashSet<Character> set = new HashSet<Character>();
+
+        for (int i = 0; i < str.length(); i++)
+        {
+            char ch = str.charAt(i);
+            if (!open && ch == endChar.charAt(0))
+            {
+                open = true;
+            }
+            else if (open)
+            {
+                if (ch != endChar.charAt(0))
+                {
+                    if (!set.contains(ch))
+                    {
+                        set.add(ch);
+                        count++;
+                    }
+                }
+                else
+                {
+                    open = false;
+                    set.clear();
+                }
+            }
+        }
+
+        return count;
     }
 }
