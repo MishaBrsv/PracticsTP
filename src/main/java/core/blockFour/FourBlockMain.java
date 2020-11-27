@@ -1,4 +1,4 @@
-package core;
+package core.blockFour;
 
 import tasks.TaskFour;
 
@@ -96,24 +96,24 @@ public class FourBlockMain {
                 System.out.println(TaskFour.toStarShorthand(str));
                 break;
             }
-            case 8: {
-                System.out.println("Введите две строки:");
-                String str1 = in.nextLine();
-                String str2 = in.nextLine();
-
-                in.close();
-
-                System.out.println(TaskFour.doesRhyme(str1, str2));
-            }
-            case 9: {
-                System.out.println("Введите два числа:");
-                int a = in.nextInt();
-                int b = in.nextInt();
-
-                in.close();
-
-                System.out.println(TaskFour.trouble(a, b));
-            }
+//            case 8: {
+//                System.out.println("Введите две строки:");
+//                String str1 = in.nextLine();
+//                String str2 = in.nextLine();
+//
+//                in.close();
+//
+//                System.out.println(TaskFour.doesRhyme(str1, str2));
+//            }
+//            case 9: {
+//                System.out.println("Введите два числа:");
+//                int a = in.nextInt();
+//                int b = in.nextInt();
+//
+//                in.close();
+//
+//                System.out.println(TaskFour.trouble(a, b));
+//            }
             case 10: {
                 System.out.println("Введите последовательность символов и символ, обозначающий начало/конец книги:");
                 String str = in.next();
