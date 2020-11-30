@@ -1,4 +1,4 @@
-package core;
+package core.blockOneTwoThree;
 
 import tasks.TaskOne;
 import tasks.TaskThree;
