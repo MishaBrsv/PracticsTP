@@ -16,6 +16,21 @@ public class Task3 {
     }
 
     public static boolean canComplete(String str, String fullStr) {
-        return fullStr.contains(str);
+        int j = 0;
+        for (int i = 0; i < fullStr.length(); i++)
+        {
+            if (j >= str.length())
+            {
+                return true;
+            }
+
+            char ch = fullStr.charAt(i);
+            if (ch == str.charAt(j))
+            {
+                j++;
+            }
+        }
+
+        return j == str.length();
     }
 }
